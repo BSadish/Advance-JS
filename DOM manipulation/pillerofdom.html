@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* h1{
+        color: red;
+        font-size: 30px;
+    } */
+</style>
+<body>
+
+    <h1>This is the DOM sir</h1>
+    <h2>This is the second h1 </h2>
+    <p>This is the paragraph tag</p>
+
+    <!-- 4piller of DOM
+     1. Selection of an Element
+     2. Changing HTML
+     3. Changing CSS
+     4. Event Listner -->
+
+    <script>
+        var x=document.querySelector("h2")
+        console.log(x)  //Selction of an Element
+
+
+var a=document.querySelector("h1")
+a.innerHTML= "This is the replace ment of h1"
+//Changing HTML
+
+var b=document.querySelector("p")
+b.style.fontSize="80px"  //Changing CSS
+
+a.innerHTML="Hello every one buddy"
+a.style.backgroundColor="yellow"
+a.addEventListener("click", function(){
+    a.innerHTML="Hello you click it"
+})   //Event Listner
+
+    </script>
+</body>
+</html>
