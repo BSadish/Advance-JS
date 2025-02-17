@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="clickme">Click</button>
+
+
+
+
+<script>
+    // callback= a function that is passed as an argument to another function
+
+// setTimeout(function(){
+//     console.log("timer");
+// }, 5000);
+
+// function x(y){
+//     console.log("x")
+//     y();
+// }
+// x(function y(){
+//     console.log("y")
+// })
+
+
+function attacheventlistner(){
+let count=0
+document.getElementById("clickme").addEventListener("click",function xyz(){
+    console.log("Button Clicked",++count)
+
+})
+}
+attacheventlistner()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
