@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const promiseone= new Promise(function(resolve, reject){
+    setTimeout(() => {
+        console.log("Async task is complete")
+        resolve()
+    }, 1000);
+})
+
+promiseone.then(function(){
+    console.log("Promise consumed")
+})
+
+
+new Promise(function(resolve,reject){
+    setTimeout(() => {
+        console.log("You are in Promise")
+        resolve()
+    }, 1000);
+})
+.then(function(){
+    console.log("Promise is consumed")
+})
+
+
+const promisethree=new Promise(function(resolve,reject){
+setTimeout(() => {
+    resolve({username: "sadish", email:"sadish@gmail.com"})
+}, 1000);
+
+})
+promisethree.then(function(user){
+console.log(user)
+})
+
+
+
+const promisefour=new Promise(function(resolve,reject){
+    setTimeout(() => {
+        let error=true
+        if(!error){
+            resolve({username:"localhost", password:"3487"})
+        }
+        else{
+            reject("ERROR: Something went wrong")
+        }
+    }, 1000);
+})
+const username=promisefour.then((user)=>{
+console.log(user);
+return user.username
+}).then((username)=>{
+    console.log(username)
+}).catch(function(error){
+    console.log("error")
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
