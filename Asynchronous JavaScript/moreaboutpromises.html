@@ -80,6 +80,29 @@
 //     console.log("error" +error)
 // })
 
+function getuser(){
+    return new Promise ((resolve,reject)=>{
+        setTimeout(() => {
+            let user={
+                name:"sadish",
+                roll:1,
+                address:"simalghari"
+            }
+            resolve(user)
+        }, 2000);
+    })
+}
+getuser().then((user)=>{
+    console.log("User data",user)
+}).catch((error)=>{
+    console.log("error",error)
+})
+
+
+// hello world
+// by using reject keyword when the result is false
+//the code doesnot run and shows an error message
+
 
 
 
