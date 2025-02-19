@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+async function dochores(){
+ try{
+    const walkDogResult= await walkdog();
+    console.log(walkDogResult);
+
+    const cleankitchenresult=await cleankitchen();
+    console.log(claenkitchenresult)
+
+    const takeouttrashresult=await takeouttrash();
+    console.log(takeouttrashresult);
+    console.log("You finished all the chores")
+ }
+ catch(error){
+    console.log("Error", error)
+ }
+}
+dochores();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
