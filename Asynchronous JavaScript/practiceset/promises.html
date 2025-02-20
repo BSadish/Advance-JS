@@ -8,27 +8,60 @@
 <body>
     <script>
 // promise chainning
-function asyncfunc1(){
+// function asyncfunc1(){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+// console.log("Some data one")
+// resolve("success")
+//         },3000)
+//     })
+// }
+// function asyncfunc2(){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+// console.log("Some data two")
+// resolve("success")
+//         },3000)
+//     })
+// }
+// function asyncfunc3(){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(()=>{
+// console.log("Some data two")
+// reject("Promise Failed")
+//         },3000)
+//     })
+// }
+
+
+// console.log("Fetching data 1.....")
+// let p1=asyncfunc1();
+// p1.then((res)=>{
+//     console.log(res);
+//     console.log("Fetching data 2....")
+//     let p2=asyncfunc2();
+//     p2.then((res)=>{
+//         console.log(res)
+//     })
+    
+// });
+
+function getdata(dataid){
     return new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-console.log("Some data one")
-resolve("success")
-        },3000)
+        setTimeout(() => {
+            console.log("Data",dataid);
+resolve("Success")
+        }, 4000);
     })
 }
-function asyncfunc2(){
-    return new Promise((resolve,reject)=>{
-        setTimeout(()=>{
-console.log("Some data two")
-resolve("success")
-        },3000)
+getdata(1).then((res)=>{
+    console.log(res)
+    getdata(2).then((res)=>{
+        console.log(res)
     })
-}
-console.log("Fetching data 1")
-let p1=asyncfunc1();
-p1.then((res)=>{
-    console.log(res);
-});
+})
+// Simple way of promises chaining
+
 
 // console.log("Fetching data 2")
 // let p2=asyncfunc2();
