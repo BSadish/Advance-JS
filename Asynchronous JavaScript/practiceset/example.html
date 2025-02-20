@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        //example of promises
+
+        function getdata(getid){
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    console.log("Data ", getid)
+                    resolve("success")
+                    // reject("Promise failed")
+                }, 2000);
+            })
+        }
+        getdata(1).then((res)=>{
+            console.log(res)
+        }).catch((error)=>{
+    console.log("Error",error)
+}).finally(()=>{
+    console.log("Code is executed")
+})
+
+// Handle error using promises
+
+function thedata(dataid){
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            console.log("Data ",dataid)
+            let error=true;
+            if(!error){
+                resolve("The code has not error")
+            }
+            else{
+                reject("The code has error")
+            }
+        }, 2000);
+    })
+}
+thedata(1).then((res)=>{
+    console.log(res)
+})
+.catch((error)=>{
+    console.log("Error",error)
+})
+
+
+
+// Chaning of then
+function getdata(getid){
+            return new Promise((resolve,reject)=>{
+                setTimeout(() => {
+                    console.log("Data ", getid)
+                    resolve("success")
+                    // reject("Promise failed")
+                }, 2000);
+            })
+        }
+        getdata(1).then((res)=>{
+return getdata(2);     
+        }).then((res)=>{
+            return getdata(3)
+        })
+    </script>
+</body>
+</html>
