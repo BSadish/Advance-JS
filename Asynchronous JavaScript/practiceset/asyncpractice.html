@@ -8,24 +8,42 @@
 <body>
     <script>
 
- function api(){
+//  function api(){
+//     return new Promise((resolve,reject)=>{
+//         setTimeout(() => {
+//             console.log("Weather data")
+// resolve(200)
+//         }, 2000);
+//     })
+// }
+// async function getweatherdata(){
+//     await api();  //1st call
+//     await api();  //2nd call
+// }
+
+function getData(dataid){
     return new Promise((resolve,reject)=>{
-        setTimeout(() => {
-            console.log("Weather data")
-resolve(200)
-        }, 2000);
+        setTimeout(()=>{
+console.log("The data is ", dataid)
+resolve("success")
+        },2000)
     })
 }
-async function getweatherdata(){
-    await api();  //1st call
-    await api();  //2nd call
+
+async function getalldata(){
+    console.log("Fetching data1.....")
+    await getData(1);  //1st call
+    console.log("Fetching data2.....")
+    await getData(2);  //2nd call
+    console.log("Fetching data3.....")
+    await getData(3);
+    console.log("Fetching data4.....")
+    await getData(4);
+    console.log("Fetching data5.....")
+    await getData(5);
+
 }
-
-
-
-async function getdata(dataid) {
-    settim
-}
+getalldata()
 
 
 
