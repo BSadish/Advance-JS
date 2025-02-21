@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// function fault(){
+//     return new Promise ((resolve,reject)=>{
+//         setTimeout(() => {
+//             console.log("The Fetching is being executed")
+//         }, 3000);
+//     })
+// }
+function setone(){
+    return new Promise ((resolve,reject)=>{
+        console.log("Set one executed")
+        setTimeout(() => {
+            let flag=true;
+            if(!flag){
+                resolve("Promise executed")
+            }
+            else{
+                reject("Promise failed");
+            }
+        }, 3000);
+    })
+}
+async function fetch(){
+    try{
+        const take=await setone();
+        console.log(take)
+        console.log("The function is fetch")
+    }
+    catch(error){
+        console.log("Error ",error)
+    }
+    
+}
+fetch()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
