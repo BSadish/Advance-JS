@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function takedata(dataid){
+    return new Promise ((resolve,reject)=>{
+        setTimeout(() => {
+            console.log("Get data ", dataid)
+            resolve("Success")
+        }, 3000);
+    })
+}
+async function getdata() {
+    await takedata(1);
+    await takedata(2);
+    await takedata(3)
+    
+}
+getdata()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
