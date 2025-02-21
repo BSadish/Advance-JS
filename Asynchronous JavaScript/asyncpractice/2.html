@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+async function fetchdata() {
+    console.log("Fetching data....");
+    let promise =new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            resolve("Data received")
+        },3000);
+    });
+    let result=await promise;
+    console.log(result);
+    console.log("Process Complete")
+    
+}
+fetchdata()
+console.log("Hello from outside async function")
+
+//fetching data...
+//hello form outside async function
+//data received
+//process complete
+
+
+
+
+
+    </script>
+</body>
+</html>
