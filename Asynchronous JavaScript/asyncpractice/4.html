@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// using then-catch 
+
+function approch(){
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+            let error=true;
+            if(!error){
+                reslove("Promise Fetched")
+            }
+            else{
+                reject("Promise failed")
+            }
+        }, 3000);
+    })
+}
+
+approch().then((res)=>{
+    console.log(res);
+}).catch((error)=>{
+    console.log(error)
+})
+
+
+
+
+
+function getdata(getid){
+    return new Promise((resolve,reject)=>{
+        setTimeout(() => {
+           console.log("Data id is ", getid)
+           resolve("success")
+        }, 3000);
+    })
+}
+async function takedata() {
+    await getdata(1)
+    
+}
+takedata()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
