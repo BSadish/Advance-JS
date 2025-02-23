@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="click" onclick="password()">Random password generator</button>
+    <p id="result"></p>
+
+    <script>
+function password(){
+ let chars="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+";
+     let password="";
+     let length=12;
+     for (let i=0;i<length;i++){
+        let randomnumber=Math.floor(Math.random()*chars.length);
+        password+=chars[randomnumber]
+     }
+   
+    document.getElementById("result").innerHTML=password
+   
+    
+    
+}
+
+
+
+
+    </script>
+</body>
+</html>
