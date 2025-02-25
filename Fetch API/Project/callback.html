@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let stocks={
+    fruits:["strawberry","gapes","banana","apple"],
+    liquid:["water","ice"],
+    holder:["cone","cup","stick"],
+    toppings:["choclate","peanuts"]
+}
+
+let order=(fruit_name,call_production)=>{
+    setTimeout(()=>{
+
+console.log(`${stocks.fruits[fruit_name]}`)
+call_production();
+    },2000)
+    
+}
+let production =()=>{
+    setTimeout(() => {
+        console.log("Production has started")
+        setTimeout(()=>{
+            console.log("The food has been chopped")
+            setTimeout(()=>{
+                console.log(`${stocks.liquid[3]} and ${stocks.liquid[3]} was added`)
+            },1000)
+        },2000)
+    }, 30000);
+}
+
+order(0,production)
+
+
+// let order=(call_production)=>{
+//     console.log("Order Placed , please call production")
+// call_production()
+// }
+
+// let production=()=>{
+//     console.log("Order received, starting production")
+// }
+// order(production)
+
+    </script>
+</body>
+</html>
