@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="result"></p>
+    <button id="button" onclick="randomjoke()">Get Random Joke</button>
+
+    <script>
+        function randomjoke(){
+            let jokes=["Why don't you cry", " why did the scarecrow win a award","why don't eggs tell jokes", " What did one wall say to the other wall"
+            ]
+            let letters=""
+            for(i=0;i<=jokes.length;i++)
+        {
+            let randomjokes=Math.floor(Math.random()*[i])
+            // console.log(randomjokes)
+            letters=jokes[randomjokes]
+        }
+        document.getElementById("result").innerHTML= letters
+        }
+        randomjoke()
+    </script>
+</body>
+</html>
