@@ -20,7 +20,7 @@
     align-items: center;
 }
 .content{
-    width: 400px;
+    width: 500px;
     height: 400px;
     background-color: black;
     border-radius: 10px;
@@ -45,6 +45,9 @@ button:hover{
     color: yellow;
     
 }
+.div2{
+    width: 400px;
+}
     </style>
 </head>
 <body>
@@ -52,8 +55,8 @@ button:hover{
         <div class="content">
             <!-- <div class="div"> -->
             <div class="div1">😂</div>
-            <div class="div2">  <p id="result"></p></div>
-            <div class="div3"> <button id="button" onclick="randomjoke()">Get Random Joke</button> </div>
+            <div class="div2"> <p id="result" style="color: white;"></p></div>
+            <div class="div3"> <button id="button" >Get Random Joke</button> </div>
         <!-- </div> -->
           
         
@@ -62,20 +65,36 @@ button:hover{
   
 
     <script>
-        function randomjoke(){
-            let jokes=["Why don't you cry", " why did the scarecrow win a award","why don't eggs tell jokes", " What did one wall say to the other wall"
-            ]
-            let letters=""
-            for(i=0;i<=jokes.length;i++)
-        {
-            let randomjokes=Math.floor(Math.random()*[i])
-            // console.log(randomjokes)
-            letters=jokes[randomjokes]
-        }
-        document.getElementById("result").style.backgroundColor= "white";
-        document.getElementById("result").innerHTML= letters
-        }
-        randomjoke()
+        // function randomjoke(){
+        //     let jokes=["Why don't you cry", " why did the scarecrow win a award","why don't eggs tell jokes", " What did one wall say to the other wall"
+        //     ]
+        //     let letters=""
+        //     for(i=0;i<=jokes.length;i++)
+        // {
+        //     let randomjokes=Math.floor(Math.random()*[i])
+        //     // console.log(randomjokes)
+        //     letters=jokes[randomjokes]
+        // }
+        // document.getElementById("result").style.backgroundColor= "white";
+        // document.getElementById("result").innerHTML= letters
+        // }
+        // randomjoke()
+
+        // shorter and more flexible code which i just throught
+
+        const jokeholder=document.getElementById("result");
+        const button=document.getElementById("button");
+        const url="https://v2.jokeapi.dev/joke/Any?blacklistFlags=religious,political,sexist&type=single&idRange=0-95"
+
+let getjoke=()=>{
+    fetch(url)
+    .then (data =>data.json())
+    .then (item =>{
+        jokeholder.textContent=`${item.joke}`;
+    })
+}
+button.addEventListener("click",getjoke);
+jetjoke();
     </script>
 </body>
 </html>
