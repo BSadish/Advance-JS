@@ -4,10 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+*{
+    margin: 0px;
+    padding:0px;
+    box-sizing: border-box;
+}
+.container
+{
+    width: 100%;
+    height: 100vh;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content{
+    width: 400px;
+    height: 400px;
+    background-color: black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.div1{
+    font-size: 60px;
+}
+button{
+    padding: 8px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+transition: all 0.3s ease;
+}
+button:hover{
+    background-color: red;
+    color: yellow;
+    
+}
+    </style>
 </head>
 <body>
-    <p id="result"></p>
-    <button id="button" onclick="randomjoke()">Get Random Joke</button>
+    <div class="container">
+        <div class="content">
+            <!-- <div class="div"> -->
+            <div class="div1">😂</div>
+            <div class="div2">  <p id="result"></p></div>
+            <div class="div3"> <button id="button" onclick="randomjoke()">Get Random Joke</button> </div>
+        <!-- </div> -->
+          
+        
+        </div>
+    </div>
+  
 
     <script>
         function randomjoke(){
@@ -20,6 +72,7 @@
             // console.log(randomjokes)
             letters=jokes[randomjokes]
         }
+        document.getElementById("result").style.backgroundColor= "white";
         document.getElementById("result").innerHTML= letters
         }
         randomjoke()
